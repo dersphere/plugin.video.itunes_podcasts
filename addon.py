@@ -136,7 +136,6 @@ def add_to_my_podcasts(content_type, podcast_id):
         my_podcasts[content_type] = {}
     my_podcasts[content_type][podcast_id] = podcast
     my_podcasts.sync()
-    xbmc.executebuiltin('Container.Refresh')
 
 
 @plugin.route('/<content_type>/podcasts/my/del/<podcast_id>')
@@ -144,7 +143,6 @@ def del_from_my_podcasts(content_type, podcast_id):
     if podcast_id in my_podcasts.get(content_type, {}):
         del my_podcasts[content_type][podcast_id]
         my_podcasts.sync()
-        xbmc.executebuiltin('Container.Refresh')
 
 
 @plugin.route('/<content_type>/podcasts/search/')
