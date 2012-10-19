@@ -18,7 +18,7 @@
 #
 
 import simplejson as json
-from urllib import urlencode
+from urllib import urlencode, quote_plus
 from urllib2 import urlopen, Request, HTTPError, URLError
 
 import feedparser
@@ -211,7 +211,7 @@ class ItunesPodcastApi():
         url = PODCAST_SEARCH_URL % ({
             'country': self.country,
             'limit': min(int(limit), MAX_PODCAST_SEARCH_LIST),
-            'search_term': search_term
+            'search_term': quote_plus(search_term)
         })
         data = self.__get_json(url)
         podcasts = self._parse_podcast_search_result(data['results'])
