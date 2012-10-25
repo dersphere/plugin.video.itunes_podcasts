@@ -1,3 +1,5 @@
+1.0.0
+ - Initial release in the Eden-Repository
 0.9.1
  - changed add-on name to "Apple iTunes Podcasts"
  - fixed spaces in search term
