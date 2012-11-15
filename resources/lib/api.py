@@ -204,7 +204,7 @@ class ItunesPodcastApi():
                 'rights': content['feed'].get('copyright')
             })
         if not items:
-            raise NotImplementedError
+            raise NoEnclosureException
         return items
 
     def search_podcast(self, search_term, limit=50):
