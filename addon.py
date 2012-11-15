@@ -257,6 +257,7 @@ def __get_country():
             ('greec', 'GR'),
             ('ital', 'IT'),
             ('japa', 'JP'),
+            ('kor', 'KR'),
             ('dutch', 'NL'),
             ('norw', 'NO'),
             ('pol', 'PL'),

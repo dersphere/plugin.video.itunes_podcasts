@@ -52,6 +52,7 @@ STOREFRONT_IDS = {
     'GR': 143448,  # Greece
     'IT': 143450,  # Italy
     'JP': 143462,  # Japan
+    'KR': 143466,  # Korea
     'LU': 143451,  # Luxembourg
     'MX': 143468,  # Mexico
     'NL': 143452,  # Netherlands
