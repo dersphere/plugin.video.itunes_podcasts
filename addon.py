@@ -251,6 +251,7 @@ def __get_country():
     if not plugin.get_setting('country_already_set'):
         lang_country_mapping = (
             ('chin', 'CN'),
+            ('denm', 'DK'),
             ('fin', 'FI'),
             ('fre', 'FR'),
             ('germa', 'DE'),

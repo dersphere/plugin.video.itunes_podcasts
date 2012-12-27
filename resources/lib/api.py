@@ -49,6 +49,7 @@ STOREFRONT_IDS = {
     'FI': 143447,  # Finland
     'FR': 143442,  # France
     'DE': 143443,  # Germany
+    'DK': 143458,  # Denmark
     'GR': 143448,  # Greece
     'IT': 143450,  # Italy
     'JP': 143462,  # Japan
