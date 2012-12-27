@@ -199,7 +199,7 @@ class ItunesPodcastApi():
                 'summary': item.get('summary'),
                 'author': item.get('author'),
                 'item_url': link['url'],
-                'size': int(link.get('length', 0)),
+                'size': int(link.get('length', 0) or 0),
                 'thumb': item.get('image', {}).get('href') or fallback_thumb,
                 'duration': link.get('duration', '0:00'),
                 'pub_date': __format_date(item.get('published_parsed')),
