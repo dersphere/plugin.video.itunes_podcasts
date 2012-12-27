@@ -1,4 +1,4 @@
-1.0.2
+1.1.2 (Frodo Version)
  - show notification when podcast has no items
  - added korea and dansk storefront
  - fixed error on podcast items with invalid length
