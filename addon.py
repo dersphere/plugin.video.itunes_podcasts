@@ -133,7 +133,7 @@ def del_from_my_podcasts(content_type, podcast_id):
 
 @plugin.route('/<content_type>/podcasts/search/')
 def search(content_type):
-    search_string = __keyboard(_('search'))
+    search_string = plugin.keyboard(heading=_('search'))
     if search_string:
         url = plugin.url_for(
             endpoint='search_result',
@@ -231,13 +231,6 @@ def __add_podcast_items(content_type, podcast_id, podcast_items):
     if plugin.get_setting('force_viewmode_items') == 'true':
         finish_kwargs['view_mode'] = 'thumbnail'
     return plugin.finish(items, **finish_kwargs)
-
-
-def __keyboard(title, text=''):
-    keyboard = xbmc.Keyboard(text, title)
-    keyboard.doModal()
-    if keyboard.isConfirmed() and keyboard.getText():
-        return keyboard.getText()
 
 
 def __get_country():
