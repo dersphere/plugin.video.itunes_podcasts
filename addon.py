@@ -187,9 +187,10 @@ def __add_podcasts(content_type, podcasts):
             )]
         item = {
             'label': podcast['name'],
-            'label2': str(i),
             'thumbnail': podcast['thumb'],
             'info': {
+                'title': podcast['name'],
+                'count': i,
                 'plot': podcast['summary'] or '',
                 'studio': podcast['author'] or '',
                 'genre': podcast['genre'] or '',
@@ -205,7 +206,7 @@ def __add_podcasts(content_type, podcasts):
         }
         items.append(item)
     finish_kwargs = {
-        'sort_methods': ('TITLE', 'DATE')
+        'sort_methods': ('PLAYLIST_ORDER', 'TITLE', 'DATE')
     }
     if plugin.get_setting('force_viewmode_podcasts') == 'true':
         finish_kwargs['view_mode'] = 'thumbnail'
@@ -215,9 +216,10 @@ def __add_podcasts(content_type, podcasts):
 def __add_podcast_items(content_type, podcast_id, podcast_items):
     items = [{
         'label': item['title'],
-        'label2': str(i),
         'thumbnail': item['thumb'],
         'info': {
+            'title': item['title'],
+            'count': i,
             'plot': item['summary'] or '',
             'studio': item['author'] or '',
             'size': item['size'] or 0,
@@ -233,7 +235,7 @@ def __add_podcast_items(content_type, podcast_id, podcast_items):
         'is_playable': True
     } for i, item in enumerate(podcast_items)]
     finish_kwargs = {
-        'sort_methods': ('TITLE', 'DATE', 'SIZE')
+        'sort_methods': ('PLAYLIST_ORDER', 'TITLE', 'DATE', 'SIZE')
     }
     if plugin.get_setting('force_viewmode_items') == 'true':
         finish_kwargs['view_mode'] = 'thumbnail'
