@@ -42,6 +42,9 @@ STRINGS = {
 @plugin.route('/')
 def show_root():
     content_type = plugin.request.args['content_type']
+    if not content_type:
+        url = plugin.url_for(endpoint='show_content_types')
+        return plugin.redirect(url)
     if isinstance(content_type, (list, tuple)):
         content_type = content_type[0]
     items = (
@@ -57,6 +60,21 @@ def show_root():
             endpoint='search',
             content_type=content_type
         )},
+    )
+    return plugin.finish(items)
+
+
+@plugin.route('/content_types/')
+def show_content_types():
+    items = (
+        {'label': _('video'), 'path': plugin.url_for(
+            endpoint='show_root',
+            content_type='video'
+        )},
+        {'label': _('audio'), 'path': plugin.url_for(
+            endpoint='show_root',
+            content_type='audio'
+        )}
     )
     return plugin.finish(items)
 
