@@ -41,7 +41,7 @@ STRINGS = {
 
 @plugin.route('/')
 def show_root():
-    content_type = plugin.request.args['content_type']
+    content_type = plugin.request.args.get('content_type')
     if not content_type:
         url = plugin.url_for(endpoint='show_content_types')
         return plugin.redirect(url)
