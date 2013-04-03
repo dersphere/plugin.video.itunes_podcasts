@@ -12,6 +12,11 @@
     <extension point="xbmc.addon.metadata">
         <language></language>
         <platform>all</platform>
+        <website></website>
+        <source>https://github.com/dersphere/plugin.video.itunes_podcasts</source>
+        <forum>http://forum.xbmc.org/showthread.php?tid=143064</forum>
+        <email>sphere@dersphere.de</email>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
         <summary lang="be">Apple iTunes Podcast Browser</summary>
         <summary lang="da">Udforsk Podcasts fra Apple iTunes</summary>
         <summary lang="de">Apple iTunes Podcast Browser</summary>
