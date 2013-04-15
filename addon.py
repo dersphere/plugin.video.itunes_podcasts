@@ -239,7 +239,7 @@ def __add_podcast_items(content_type, podcast_id, podcast_items):
             endpoint='watch_item',
             content_type=content_type,
             podcast_id=podcast_id,
-            item_url=item['item_url']
+            item_url=item['item_url'].encode('utf-8')
         ),
         'is_playable': True
     } for i, item in enumerate(podcast_items)]
